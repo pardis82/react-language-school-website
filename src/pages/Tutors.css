@@ -1,0 +1,217 @@
+.main-content {
+  padding-top: 80px;
+}
+
+.tutors-section {
+padding-left:1.5rem ;
+padding-right: 1.5rem;
+  margin-top: 1rem;
+  background-color: #fff;
+  scroll-margin-top: 300px;
+}
+
+.tutors-section h2 {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 2.2rem;
+  font-weight: 600;
+  display: flex !important;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* آیکون‌ها */
+.tutors-section h2 svg {
+  color: var(--primary);
+  font-size: 1.8rem;
+  transition: color 0.3s ease, text-shadow 0.3 ease;
+}
+
+.tutors-section h2 svg:hover {
+     color: #333 !important;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+transform: scale(1.1);
+letter-spacing: 0.3px;
+}
+
+.stats-section-container {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+
+}
+
+.stats-section-container:hover{
+  transform: scale(1.01);
+}
+
+/* Animation Styles */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Waterfall Animation */
+@keyframes waterfallDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tutor-waterfall {
+  margin-top: 15px;
+  /*display: flex;
+  flex-direction: column; /* Stack tutor cards within each category */
+  display: gird;
+  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+  gap: 1rem; /* Space between individual tutor cards */
+  /*align-items: center; /* Center the cards if they are narrower than the container */
+  /*width: 100%; /* Ensure the waterfall container takes full width of its parent */
+}
+
+.tutor-card {
+  opacity: 0;
+  transform: translateY(-20px);
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: waterfallDrop 0.4s ease-out forwards;
+  width: 100%;
+   max-width: 350px; /* Optional: Constrain max width of individual tutor cards */
+}
+
+/* Rest of your existing CSS remains unchanged */
+.main-content {
+  padding-top: 80px;
+}
+
+.tutors-section {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 1rem;
+  background-color: #fff;
+  scroll-margin-top: 300px;
+}
+
+/* --- ADD: Responsive Layout for Tutors Buttons (Flexbox) --- */
+
+/* Default (Mobile First): Stacked vertically, centered */
+.tutor-buttons-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically by default */
+    gap: 1rem; /* Space between buttons */
+    align-items: center; /* Center buttons horizontally within the container */
+    padding: 0 1rem; /* Add some padding to the container */
+    margin-bottom: 3rem; /* Add margin below the buttons section */
+}
+
+/* Individual button wrapper style */
+.tutor-button-wrapper {
+    width: 100%; /* Make each wrapper fill its parent width on mobile */
+    max-width: 300px; /* Constrain max width of each button wrapper */
+    text-align: center; /* Ensure content inside wrapper is centered */
+}
+
+/* On tablets and desktops, arrange horizontally */
+@media (min-width: 768px) {
+    .tutor-buttons-container {
+      display: flex;
+    flex-direction: row;
+        justify-content: center; /* Distribute items with space evenly around them */
+        gap: 2rem; /* Increase space between buttons on desktop */
+        
+    }
+  
+  .tutor-button-wrapper {
+flex: 1 ; /* Allow each button to grow and fill available space equally */
+ max-width: 250px; /* Keep this if you want a cap, otherwise remove for more flexibility */ 
+ min-width: 180px;
+  
+  }
+        
+}
+
+
+/* --- ADD: Responsive Layout for Stats Section (Flexbox) --- */
+
+/* Default (Mobile First): Stacked vertically */
+.stats-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between stats items */
+    text-align: center;
+    padding: 0 1rem;
+    margin-top: 2rem;
+    background-color: #f8f9fa; /* Optional: light background for stats section */
+    border-radius: 10px; /* Re-apply border-radius here for the container */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Optional: subtle shadow */
+    padding: 2rem; /* Optional: inner padding for the container */
+}
+
+/* Individual stat item styling */
+.stats-item {
+    flex: 1; /* Allow items to grow and shrink */
+    padding: 1rem;
+    /* If you want hover effect on individual items, add it here */
+    transition: transform 0.3s ease;
+}
+
+.stats-item:hover {
+  transform: translateY(-5px); /* Example hover effect */
+}
+
+/* On tablets and desktops, arrange horizontally */
+@media (min-width: 576px) { /* Start horizontal layout for stats on smaller screens than buttons */
+    .stats-section-container {
+        flex-direction: row; /* Change to horizontal on smaller desktop/large tablet */
+        justify-content: space-around; /* Distribute items with equal space around them */
+        align-items: center; /* Vertically align items if they have different heights */
+        max-width: 900px; /* Optional: Max width for the stats container on desktop */
+        margin-left: auto;
+        margin-right: auto; /* Center the container itself */
+    }
+
+    .stats-item {
+        flex: 1; /* Ensure they divide space equally */
+    }
+}
+
+
+/* --- KEEP: Existing Media Queries (Adjust if needed for the new structure) --- */
+
+@media (max-width: 768px) {
+  .tutors-section {
+    margin-top: 6rem; /* This looks like a reasonable adjustment for mobile */
+    padding: 2rem 1rem;
+  }
+
+  .main-content {
+    padding-top: 0; /* Removing top padding on main-content for smaller screens, adjust as needed */
+  }
+}
+
+
+
+

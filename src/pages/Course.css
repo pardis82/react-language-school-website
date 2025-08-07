@@ -1,0 +1,150 @@
+
+.course-section {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #fff;
+    margin-top: 3rem;
+}
+
+.course-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.course-section h2 svg {
+    color: var(--primary);
+    font-size: 1.8rem;
+    transition: color 0.3s ease, text-shadow 0.3 ease;
+}
+
+.course-section h2 svg:hover {
+    color: #333 !important;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+    letter-spacing: 0.3px;
+}
+
+.course-item-image img {
+    display: block;
+    width: 100%; /* Ensure images fill their container */
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    will-change: transform, opacity;
+}
+
+.course-item-image img:hover {
+    transform: scale(1.03);
+}
+
+.course-img {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    opacity: 1;
+}
+
+
+.course-img.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.course-img.fade-in {
+  opacity: 0;
+  animation: fadeInImage 0.6s forwards;
+}
+
+@keyframes fadeInImage {
+  0%{
+opacity: 0;
+    transform: scale(0.98);
+  }
+ 100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.course-img:hover {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* متن توضیح دوره */
+.subtitle {
+    font-family: var(--font-subtitle);
+    font-size: 1rem;
+    color: #444;
+    margin-top: 0.5rem;
+    padding: 0 1rem;
+    text-align: center;
+    display: block;
+}
+
+
+
+/* Default for small screens (Mobile First): Stack items */
+.course-grid-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally if there's leftover space */
+    gap: 1.5rem; /* Gap between items (adjust as needed) */
+}
+
+.course-card {
+    /* Base style for all screen sizes */
+    flex: 0 0 100%; /* Each card takes up 100% width on small screens */
+    max-width: 350px; /* Limit max width on very small screens to prevent huge cards */
+    text-align: center; /* Center content within the card */
+    margin-bottom: 1rem; /* Space between stacked cards */
+}
+
+/* --- Media Queries for Larger Screens --- */
+
+/* Small devices (tablets, 576px and up) - 2 columns */
+@media (min-width: 576px) {
+    .course-card {
+        flex: 0 0 calc(50% - 0.75rem); /* 2 columns, accounting for half of the gap */
+        /* (0.75rem is half of the 1.5rem gap, applied to both sides of each item) */
+        max-width: calc(50% - 0.75rem); /* Explicitly set max-width too */
+    }
+}
+
+/* Medium devices (desktops, 768px and up) - 3 columns */
+@media (min-width: 768px) {
+    .course-card {
+        flex: 0 0 calc(33.333% - 1rem); /* 3 columns, accounting for the gap */
+        /* (1rem is a third of 3rem total gap for 3 items) */
+        max-width: calc(33.333% - 1rem);
+    }
+}
+
+/* Optional: Large devices (large desktops, 992px and up) - slight adjustments */
+@media (min-width: 992px) {
+    .course-section .container {
+        /* This was your existing rule, keeping it here for continuity */
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .course-card {
+        flex: 0 0 calc(33.333% - 1rem); /* Maintain 3 columns, adjust gap as needed */
+        max-width: calc(33.333% - 1rem);
+    }
+    .subtitle {
+        font-size: 1rem; /* Slightly smaller on larger screens to prevent excessive wrapping */
+    }
+}
+
+/* Override Bootstrap's default box-sizing if necessary (add to top of your main CSS) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}

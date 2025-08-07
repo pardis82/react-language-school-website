@@ -1,0 +1,82 @@
+.navbar {
+    font-family: var(--font-heading);
+    background-color: var(--primary-color) !important;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+/* Desktop Navigation Styles */
+@media (min-width: 992px) {
+    .nav-item {
+        font-size: larger;
+    }
+
+    .nav-link {
+        color: var(--text-color) !important;
+        font-family: var(--font-subtitle);
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav-link:hover {
+        color: #333 !important;
+        transform: scale(1.05);
+    }
+
+    /* Icon styling */
+    .nav-link svg {
+        font-size: 1.25rem;
+    }
+
+    /* Label styling - hidden by default */
+    .nav-label {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(5px);
+        font-size: 0.7rem;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.2s ease-in-out;
+    }
+
+    /* Show label on hover */
+    .nav-link:hover .nav-label {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Mobile Navigation Styles */
+.dropdown-menu {
+    background-color: var(--primary-color);
+}
+
+.dropdown-item {
+    color: var(--text-color) !important;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Login button styles */
+.login-btn {
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+.login-btn:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}

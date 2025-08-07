@@ -1,0 +1,10 @@
+.footer-section {
+  background-color: var(--primary-color); /* همان رنگ Navbar */
+  color: var(--text-color);                     /* متن سفید */
+  padding: 1rem 2rem;               /* همان padding */
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1); /* سایه پایین (برعکس Navbar) */
+  text-align: center;
+  font-size: 0.9rem;
+  padding-bottom: 0.3rem;
+  padding-top: 0.3rem;
+}

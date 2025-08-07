@@ -1,0 +1,29 @@
+.placement-section{
+    padding-top: 88px;
+    margin-top: 50px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+.placement-container{
+ padding-left:1.5rem ;
+padding-right: 1.5rem;
+  margin-top: 1rem;
+  background-color: #fff;
+  scroll-margin-top: 300px;
+}
+
+.placement-container h2{
+font-family: var(--font-heading, sans-serif);
+  font-size: 2.2rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.placement-container form{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}

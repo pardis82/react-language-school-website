@@ -1,0 +1,14 @@
+.class-info-card{
+    background-color: var(--pink-light);
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  
+}
+
+.book-image{
+    padding-top:-10px ;
+margin-top: -10px;
+background-color: var(--pink-light);
+}
